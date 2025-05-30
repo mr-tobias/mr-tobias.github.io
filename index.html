@@ -1,187 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tobias Paez - Flutter Developer</title>
-  <style>
-    /* Universal box-sizing for consistent layout */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* Body styling for font, background, text color, and line height */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: #ffffff;
-      line-height: 1.6;
-    }
-
-    /* Header styling for background, padding, and text alignment */
-    header {
-      background-color: #1f1f1f;
-      padding: 1rem 2rem;
-      text-align: center;
-    }
-
-    /* Header title styling */
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    /* Header paragraph styling */
-    header p {
-      font-size: 1.1rem;
-      color: #cfcfcf;
-    }
-
-    /* Main content area styling for padding, max-width, and centering */
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    /* Section spacing */
-    section {
-      margin-bottom: 2rem;
-    }
-
-    /* Section heading color and spacing */
-    h2 {
-      color: #90ee90;
-      margin-bottom: 0.5rem;
-    }
-
-    /* List styling to remove default bullets and padding */
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    /* List item styling for background, spacing, padding, border-radius, and flex layout */
-    ul li {
-      background: #1f1f1f;
-      margin-bottom: 0.5rem;
-      padding: 0.8rem;
-      border-radius: 8px;
-      display: flex; /* Use flexbox for horizontal alignment of content */
-      align-items: center; /* Vertically align items in the center */
-      gap: 0.5rem; /* Add space between the image and text */
-      flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
-    }
-
-    /* Styling for images within list items */
-    ul li img {
-        height: 20px; /* Set a fixed height for the image */
-        width: auto; /* Maintain aspect ratio */
-        vertical-align: middle; /* Align image with text baseline */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tobias Paez - Flutter Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Anchor tag styling for color and text decoration */
-    a {
-      color: #90ee90;
-      text-decoration: none;
-    }
-
-    /* Anchor tag hover effect */
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer styling for text alignment, padding, font size, and color */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    /* Styling for the inline download button */
-    .inline-download-button {
-        background-color: #90ee90; /* Green background */
-        color: #121212; /* Dark text color */
-        border: none; /* No border */
-        padding: 5px 10px; /* Smaller padding for inline button */
-        border-radius: 5px; /* Rounded corners */
-        text-decoration: none; /* No underline */
-        font-size: 0.8rem; /* Smaller font size for inline button */
-        cursor: pointer; /* Pointer cursor on hover */
-        transition: opacity 0.3s ease; /* Smooth transition for hover effect */
-        margin-left: 1rem; /* Space to the left of the button */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      line-height: 1.6;
     }
 
-    /* Inline download button hover effect */
-    .inline-download-button:hover {
-        opacity: 0.8; /* Slightly reduce opacity on hover */
+    header {
+      background-color: #1f1f1f;
+      padding: 1rem 2rem;
+      text-align: center;
     }
 
-    /* Media queries for responsiveness on smaller screens */
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
 
-      main {
-        padding: 1rem;
-      }
-        /* Adjust inline button for smaller screens if needed */
-        .inline-download-button {
-            margin-left: 0; /* Remove left margin */
-            margin-top: 0.5rem; /* Add top margin if it wraps */
-            width: 100%; /* Make button full width if it wraps */
-            text-align: center;
-        }
-    }
-  </style>
+    header p {
+      font-size: 1.1rem;
+      color: #cfcfcf;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #90ee90;
+      margin-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      background: #1f1f1f;
+      margin-bottom: 0.5rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+    }
+
+    a {
+      color: #90ee90;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      main {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Tobias Paez</h1>
-    <p>Flutter Developer | Community & Productivity Apps</p>
-  </header>
+  <header>
+    <h1>Tobias Paez</h1>
+    <p>Flutter Developer | Community & Productivity Apps</p>
+  </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>I'm a junior Flutter developer passionate about building useful and user-friendly apps. My goal is to contribute to the community by creating apps that enhance productivity and make life easier.</p>
-    </section>
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p>I'm a junior Flutter developer passionate about building useful and user-friendly apps. My goal is to contribute to the community by creating apps that enhance productivity and make life easier.</p>
+    </section>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li>Flutter</li>
-        <li>Firebase</li>
-        <li>TensorFlow</li>
-      </ul>
-    </section>
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>Flutter</li>
+        <li>Firebase</li>
+        <li>TensorFlow</li>
+      </ul>
+    </section>
 
-    <section>
-      <h2>Project</h2>
-      <ul>
-        <li>
-            <img src="Diseño sin título.png" alt="Minu Task App Logo"> 
-            <strong>Minu Task</strong> – A productivity app to manage your daily tasks efficiently.
-            <a href="Diseño sin título.png" class="inline-download-button" download="Minu_Task_App.png">Download</a>
-        </li>
-      </ul>
-    </section>
+    <section>
+      <h2>Project</h2>
+      <ul>
+        <li><strong>Minu Task</strong> – A productivity app to manage your daily tasks efficiently.</li>
+      </ul>
+    </section>
 
-    <section>
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:paeztobiasig@gmail.com">paeztobiasig@gmail.com</a></li>
-        <li>Phone: <a href="tel:+542646136934">+54 264 613 6934</a></li>
-      </ul>
-    </section>
-  </main>
+    <section>
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:paeztobiasig@gmail.com">paeztobiasig@gmail.com</a></li>
+        <li>Phone: <a href="tel:+542646136934">+54 264 613 6934</a></li>
+      </ul>
+    </section>
+  </main>
 
-  <footer>
-    <p>&copy; 2025 Tobias Paez. All rights reserved.</p>
-  </footer>
+  <footer>
+    <p>&copy; 2025 Tobias Paez. All rights reserved.</p>
+  </footer>
 </body>
 </html>
