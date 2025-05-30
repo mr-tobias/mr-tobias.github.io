@@ -69,3 +69,10 @@ footer {
     margin-top: 40px;
     color: #666;
 }
+
+.app-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
