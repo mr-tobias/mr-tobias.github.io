@@ -3,519 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tobias Paez - Flutter Developer Portfolio</title>
+  <title>Tobias Paez | Embedded Systems Developer</title>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-      color: #ffffff;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    header {
-      background: rgba(15, 23, 42, 0.9);
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 3px solid #38b2ac;
-      backdrop-filter: blur(10px);
-      position: relative;
-      overflow: hidden;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at top right, rgba(56, 178, 172, 0.2) 0%, transparent 40%);
-      pointer-events: none;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(90deg, #38b2ac, #81e6d9);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      display: inline-block;
-      position: relative;
-      z-index: 2;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #cbd5e0;
-      max-width: 600px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .tagline {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.3rem 1rem;
-      background: rgba(56, 178, 172, 0.2);
-      border-radius: 50px;
-      font-size: 0.9rem;
-      color: #81e6d9;
-    }
-
-    main {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section {
-      margin-bottom: 2.5rem;
-      background: rgba(15, 23, 42, 0.7);
-      padding: 2rem;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(56, 178, 172, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-
-    section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle at bottom left, rgba(56, 178, 172, 0.1) 0%, transparent 60%);
-      pointer-events: none;
-    }
-
-    h2 {
-      color: #38b2ac;
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      position: relative;
-    }
-
-    h2 i {
-      font-size: 1.5rem;
-      color: #38b2ac;
-    }
-
-    .section-title-bar {
-      height: 4px;
-      width: 60px;
-      background: linear-gradient(90deg, #38b2ac, transparent);
-      margin-top: 8px;
-      margin-bottom: 1.5rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      background: rgba(26, 32, 44, 0.7);
-      margin-bottom: 0.8rem;
-      padding: 1.2rem;
-      border-radius: 12px;
-      border-left: 4px solid #38b2ac;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    ul li:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .project-card {
-      background: linear-gradient(135deg, rgba(26, 32, 44, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid rgba(56, 178, 172, 0.3);
-    }
-
-    .project-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 12px;
-    }
-
-    .project-icon {
-      width: 60px;
-      height: 60px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #38b2ac, #319795);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    .project-icon i {
-      font-size: 1.8rem;
-      color: white;
-    }
-
-    .project-title {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: #e2e8f0;
-    }
-
-    .project-subtitle {
-      color: #81e6d9;
-      font-size: 1rem;
-      margin-top: 4px;
-    }
-
-    .project-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .project-description {
-      color: #cbd5e0;
-      line-height: 1.7;
-      padding: 0 10px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .feature-item {
-      background: rgba(30, 41, 59, 0.6);
-      padding: 1rem;
-      border-radius: 10px;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .feature-item:hover {
-      transform: translateY(-5px);
-      background: rgba(56, 178, 172, 0.2);
-    }
-
-    .feature-item i {
-      font-size: 1.5rem;
-      color: #38b2ac;
-      margin-bottom: 0.5rem;
-    }
-
-    .download-section {
-      margin-top: 1.5rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid rgba(56, 178, 172, 0.2);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .app-info {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-
-    .app-version {
-      background: rgba(56, 178, 172, 0.2);
-      color: #81e6d9;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-    }
-
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #38b2ac, #319795);
-      color: white;
-      padding: 0.9rem 2rem;
-      border-radius: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(56, 178, 172, 0.4);
-      border: none;
-      cursor: pointer;
-      font-size: 1.1rem;
-    }
-
-    .download-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(56, 178, 172, 0.6);
-      background: linear-gradient(135deg, #319795, #2c7a7b);
-    }
-
-    .download-btn i {
-      font-size: 1.3rem;
-    }
-
-    .app-screenshot {
-      width: 100%;
-      max-width: 300px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      margin-top: 1.5rem;
-      border: 3px solid rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .app-screenshot:hover {
-      transform: scale(1.03);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2.5rem;
-      font-size: 1rem;
-      color: #a0aec0;
-      border-top: 1px solid rgba(56, 178, 172, 0.2);
-      margin-top: 2rem;
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .social-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .social-links a {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: rgba(56, 178, 172, 0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #81e6d9;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-    }
-
-    .social-links a:hover {
-      transform: translateY(-5px);
-      background: rgba(56, 178, 172, 0.4);
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        padding: 1.5rem;
-      }
-      
-      header h1 {
-        font-size: 2.2rem;
-      }
-      
-      main {
-        padding: 1.5rem;
-      }
-      
-      section {
-        padding: 1.5rem;
-      }
-      
-      .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-      }
-      
-      .download-section {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      
-      h2 {
-        font-size: 1.5rem;
-      }
-      
-      .project-title {
-        font-size: 1.4rem;
-      }
-      
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .watermark {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      font-size: 0.8rem;
-      color: rgba(255, 255, 255, 0.2);
-      z-index: -1;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Tobias Paez</h1>
-    <p>Flutter Developer | Community & Productivity Apps</p>
-    <div class="tagline">Transforming ideas into elegant mobile experiences</div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <p class="greeting">Hi, my name is</p>
+      <h1>Tobias Paez.</h1>
+      <h2 class="title-role">Embedded Systems Developer.</h2>
+      <p class="tagline">
+        Bridging the gap between hardware and software to build robust, efficient, and scalable physical computing solutions.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2><i class="fas fa-user"></i> About Me</h2>
-      <div class="section-title-bar"></div>
-      <p>I'm a passionate Flutter developer specializing in creating intuitive and efficient mobile applications. With a focus on community-driven and productivity-enhancing tools, I strive to build solutions that make everyday tasks simpler and more enjoyable.</p>
-      <p>My journey in app development combines technical expertise with a user-centered approach, ensuring that every application I create delivers both functionality and exceptional user experience.</p>
+    <section id="about" class="container">
+      <h2 class="section-title"><i class="fas fa-terminal"></i> About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am an Embedded Systems Developer based in Villa Krause, San Juan, currently completing my studies and preparing to transition fully into the tech industry. I specialize in designing and programming microcontrollers, working with real-time operating systems (RTOS), and developing efficient firmware in C and C++.
+          </p>
+          <p>
+            My goal is to build reliable hardware solutions while working towards professional certifications that validate my expertise. I am highly motivated to tackle complex hardware-software integration challenges and build systems from the bare metal up as I step into my professional career.
+          </p>
+        </div>
+        
+        <div class="image-placeholder profile-pic">
+          <div class="placeholder-content">
+            <i class="fas fa-image"></i>
+            <span>Add Profile Photo here<br>(approx. 400x400px)</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2><i class="fas fa-code"></i> Technical Skills</h2>
-      <div class="section-title-bar"></div>
-      <ul>
-        <li>
-          <strong>Flutter Development</strong>
-          <p>Building cross-platform applications with beautiful UI and smooth performance</p>
-        </li>
-        <li>
-          <strong>Firebase Integration</strong>
-          <p>Implementing authentication, cloud storage, realtime databases, and analytics</p>
-        </li>
-        <li>
-          <strong>TensorFlow & Machine Learning</strong>
-          <p>Creating intelligent features with on-device ML models</p>
-        </li>
-        <li>
-          <strong>State Management</strong>
-          <p>Proficient in Provider, Riverpod, and Bloc patterns</p>
-        </li>
-      </ul>
+    <section id="skills" class="container">
+      <h2 class="section-title"><i class="fas fa-microchip"></i> Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h3>Languages</h3>
+          <p>C, C++, Python, Assembly</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-memory"></i>
+          <h3>Hardware & MCUs</h3>
+          <p>ARM Cortex-M, STM32, ESP32, AVR, Raspberry Pi</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-network-wired"></i>
+          <h3>Protocols</h3>
+          <p>I2C, SPI, UART/USART, CAN Bus, TCP/IP</p>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-layer-group"></i>
+          <h3>Tools & OS</h3>
+          <p>FreeRTOS, Linux, Git, CMake, Oscilloscopes</p>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2><i class="fas fa-project-diagram"></i> Featured Project</h2>
-      <div class="section-title-bar"></div>
-      <ul>
-        <li class="project-card">
-          <div class="project-header">
-            <div class="project-icon">
-              <i class="fas fa-tasks"></i>
-            </div>
-            <div>
-              <div class="project-title">Minu Task</div>
-              <div class="project-subtitle">Productivity • Task Management • Flutter</div>
-            </div>
+    <section id="projects" class="container">
+      <h2 class="section-title"><i class="fas fa-project-diagram"></i> Featured Projects</h2>
+      
+      <div class="project-list">
+        <div class="project-card">
+          <div class="image-placeholder project-img">
+             <div class="placeholder-content">
+                <i class="fas fa-image"></i>
+                <span>Add Project 1 Image<br>(e.g., hardware prototype or schematic)</span>
+             </div>
           </div>
           
-          <div class="project-content">
-            <p class="project-description">Minu Task is an intuitive task management application designed to help users organize their daily activities, set priorities, and boost productivity. With its clean interface and powerful features, Minu Task transforms how you manage your time and responsibilities.</p>
-            
-            <div class="features-grid">
-              <div class="feature-item">
-                <i class="fas fa-list-check"></i>
-                <h3>Task Organization</h3>
-                <p>Categorize tasks by priority and projects</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-bell"></i>
-                <h3>Smart Reminders</h3>
-                <p>Never miss important deadlines</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-chart-line"></i>
-                <h3>Progress Tracking</h3>
-                <p>Visualize your productivity trends</p>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-sync-alt"></i>
-                <h3>Cloud Sync</h3>
-                <p>Access tasks across all devices</p>
-              </div>
+          <div class="project-info">
+            <p class="project-overline">Featured Project</p>
+            <h3 class="project-title">Smart IoT Environmental Monitor</h3>
+            <div class="project-description">
+              <p>An embedded system designed to monitor environmental metrics (temperature, humidity, air quality) in real-time. Built using an ESP32 microcontroller, interfacing with various I2C sensors, and transmitting data securely to a cloud dashboard via MQTT.</p>
             </div>
-            
-            <div class="download-section">
-              <div class="app-info">
-                <div class="app-version">v1.0.0</div>
-                <div class="app-size">45 MB</div>
-              </div>
-              <a href="minutask.apk" class="download-btn" download>
-                <i class="fas fa-download"></i> Download APK
-              </a>
+            <ul class="project-tech-list">
+              <li>C++</li>
+              <li>ESP32</li>
+              <li>FreeRTOS</li>
+              <li>MQTT</li>
+              <li>I2C</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" aria-label="GitHub Repository"><i class="fab fa-github"></i> Source Code</a>
             </div>
-            
-            <img src="minutask-icon.png" alt="Minu Task Screenshot" class="app-screenshot">
           </div>
-        </li>
-      </ul>
+        </div>
+
+        <div class="project-card reverse-layout">
+          <div class="image-placeholder project-img">
+             <div class="placeholder-content">
+                <i class="fas fa-image"></i>
+                <span>Add Project 2 Image<br>(e.g., hardware prototype or schematic)</span>
+             </div>
+          </div>
+          
+          <div class="project-info">
+            <p class="project-overline">Featured Project</p>
+            <h3 class="project-title">Custom Motor Controller PID</h3>
+            <div class="project-description">
+              <p>Developed firmware for an STM32-based motor controller. Implemented a robust PID control loop for precise DC motor positioning and speed regulation. Features hardware timers for PWM generation and quadrature encoder reading.</p>
+            </div>
+            <ul class="project-tech-list">
+              <li>C</li>
+              <li>STM32 (ARM)</li>
+              <li>Bare-Metal</li>
+              <li>PWM</li>
+            </ul>
+            <div class="project-links">
+              <a href="#" aria-label="GitHub Repository"><i class="fab fa-github"></i> Source Code</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section>
-      <h2><i class="fas fa-envelope"></i> Contact Me</h2>
-      <div class="section-title-bar"></div>
-      <ul>
-        <li>
-          <i class="fas fa-envelope"></i> 
-          <strong>Email:</strong> <a href="mailto:paeztobiasig@gmail.com">paeztobiasig@gmail.com</a>
-        </li>
-        <li>
-          <i class="fas fa-phone"></i> 
-          <strong>Phone:</strong> <a href="tel:+542646136934">+54 264 613 6934</a>
-        </li>
-        <li>
-          <i class="fas fa-map-marker-alt"></i> 
-          <strong>Location:</strong> San Juan, Argentina
-        </li>
-        <li>
-          <i class="fab fa-github"></i> 
-          <strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
-        </li>
-      </ul>
+    <section id="contact" class="container contact-section">
+      <h2 class="section-title justify-center"><i class="fas fa-envelope"></i> Get In Touch</h2>
+      <p class="contact-text">
+        I am currently looking for new opportunities in embedded systems development. Whether you have a question, a project idea, or just want to connect, I'll try my best to get back to you!
+      </p>
+      
+      <div class="contact-methods">
+        <a href="mailto:paeztobiasig@gmail.com" class="contact-item">
+          <i class="fas fa-at"></i>
+          <span>paeztobiasig@gmail.com</span>
+        </a>
+        <a href="tel:+542646136934" class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+54 264 613 6934</span>
+        </a>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>San Juan, Argentina</span>
+        </div>
+      </div>
+      
+      <a href="mailto:paeztobiasig@gmail.com" class="btn btn-primary mt-2">Say Hello</a>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Tobias Paez. All rights reserved.</p>
     <div class="social-links">
-      <a href="#"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-dribbble"></i></a>
+      <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="#" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
     </div>
+    <p>&copy; 2026 Tobias Paez. Designed & Built for Embedded Systems.</p>
   </footer>
-  
-  <div class="watermark">Flutter Developer Portfolio</div>
+
 </body>
 </html>
